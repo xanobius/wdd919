@@ -1,9 +1,5 @@
 <nav class="navbar" role="navigation" aria-label="main navigation">
     <div class="navbar-brand">
-<!--        <a class="navbar-item" href="https://bulma.io">-->
-<!--            <img src="http://lorempixel.com/112/28/" width="112" height="28">-->
-<!--        </a>-->
-
         <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbarBasicExample">
             <span aria-hidden="true"></span>
             <span aria-hidden="true"></span>
@@ -13,12 +9,25 @@
 
     <div id="navbarBasicExample" class="navbar-menu">
         <div class="navbar-start">
+
+            <?php if($_SESSION['role'] == 'admin'){ ?>
+                <a class="navbar-item">
+                    Top Secret
+                </a>
+            <?php } ?>
+
+            <?php if($_SESSION['role'] == 'moderator' || $_SESSION['role'] == 'admin'){ ?>
+                <a class="navbar-item">
+                    A little bit Secret
+                </a>
+            <?php } ?>
+
             <a class="navbar-item">
-                Home
+                ???
             </a>
 
             <a class="navbar-item">
-                Documentation
+                ???
             </a>
 
             <div class="navbar-item has-dropdown is-hoverable">
@@ -46,12 +55,15 @@
         <div class="navbar-end">
             <div class="navbar-item">
                 <div class="buttons">
-                    <a class="button is-primary" href="<?php print getLinkFor('login') ?>">
-                        <strong>Sign up</strong>
-                    </a>
-                    <a class="button is-light">
-                        Log in
-                    </a>
+                    <?php if($_SESSION['logged_in'] != 1) { ?>
+                        <a class="button is-light" href="/index.php?p=login">
+                            Log in
+                        </a>
+                    <?php }else{ ?>
+                        <a class="button" href="/index.php?p=login&action=logout">
+                            Log out
+                        </a>
+                    <?php } ?>
                 </div>
             </div>
         </div>

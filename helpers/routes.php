@@ -1,5 +1,42 @@
 <?php
 
+// Some help for creating links, maybe?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
 function getLinkFor($page)
 {
     $default = 'index.php';
@@ -11,4 +48,4 @@ function getLinkFor($page)
     }
 
     return $default;
-}
+}*/

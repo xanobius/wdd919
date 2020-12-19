@@ -1,18 +1,19 @@
 <?php
+session_start();
 
-require_once('config.php');
-require_once('database.php');
+$css_head = [
+    'assets/css/bulma.css'
+];
 
-require_once('helpers/routes.php');
-// Decide, what we have to do
-
-// $page = 'templates/forms/login.php';
-if(isset($_GET['p'])){
+// Was soll gemacht werden
+// 1. Seite aussuchen. In Parameter p gespeicher
+if(isset($_GET['p']) && $_GET['p'] != ''){
     if($_GET['p'] == 'login'){
-        $page = 'templates/forms/login.php';
+        include('controllers/login.php');
     }
 }
 
+// Seite ist bereit
 require 'templates/layout.php';
 
 
@@ -30,6 +31,20 @@ require 'templates/layout.php';
 
 
 
+
+//require_once('config.php');
+//require_once('database.php');
+
+// require_once('helpers/routes.php');
+// Decide, what we have to do
+
+// $page = 'templates/forms/login.php';
+
+/*if(isset($_GET['p'])){
+    if($_GET['p'] == 'login'){
+        $page = 'templates/forms/login.php';
+    }
+} */
 
 
 
