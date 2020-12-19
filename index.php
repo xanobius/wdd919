@@ -1,8 +1,13 @@
 <?php
-
+require_once('helpers/routes.php');
 // Decide, what we have to do
 
 // $page = 'templates/forms/login.php';
+if(isset($_GET['p'])){
+    if($_GET['p'] == 'login'){
+        $page = 'templates/forms/login.php';
+    }
+}
 
 require 'templates/layout.php';
 
