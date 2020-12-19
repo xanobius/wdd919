@@ -1,6 +1,6 @@
 <?php
 
 define("DBSERVER", 'db');
-define("DBUSER", 'user');
+define("DBUSER", 'root');
 define("DBPASSWORT", 'test');
-define("DBNAME", 'myDb');
+define("DBNAME", 'wdd919');

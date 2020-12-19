@@ -22,31 +22,29 @@
                 </a>
             <?php } ?>
 
-            <a class="navbar-item">
-                ???
-            </a>
-
-            <a class="navbar-item">
-                ???
-            </a>
-
+            <?php foreach(getAllMainCategories() as $category) { ?>
+                <a class="navbar-item">
+                    <?php print $category['name'] . ' ('.$category['id'] . ')'; ?>
+                </a>
+            <?php } ?>
             <div class="navbar-item has-dropdown is-hoverable">
                 <a class="navbar-link">
-                    More
+                    Asien
                 </a>
                 <div class="navbar-dropdown">
                     <a class="navbar-item">
-                        About
+                        China
                     </a>
+                </div>
+            </div>
+
+            <div class="navbar-item has-dropdown is-hoverable">
+                <a class="navbar-link">
+                    Europa
+                </a>
+                <div class="navbar-dropdown">
                     <a class="navbar-item">
-                        Jobs
-                    </a>
-                    <a class="navbar-item">
-                        Contact
-                    </a>
-                    <hr class="navbar-divider">
-                    <a class="navbar-item">
-                        Report an issue
+                        Schweiz
                     </a>
                 </div>
             </div>

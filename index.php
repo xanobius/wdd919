@@ -1,4 +1,11 @@
 <?php
+// Base system
+include('config.php');
+include('database.php');
+
+// Database functions
+include('database/categories.php');
+
 session_start();
 
 $css_head = [
@@ -12,6 +19,7 @@ if(isset($_GET['p']) && $_GET['p'] != ''){
         include('controllers/login.php');
     }
 }
+
 
 // Seite ist bereit
 require 'templates/layout.php';
