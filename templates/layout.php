@@ -13,8 +13,15 @@
 <?php include('templates/navigation.php') ?>
 <section class="section">
     <div class="container">
-        <?php print $content ?? "Kein Inhalt definiert :-(" ?>
+        <?php
+            if(isset($page)){
+                include($page);
+            }else{
+                print $content ?? "Kein Inhalt definiert :-(";
+            }
+        ?>
     </div>
 </section>
+<script src="assets/js/nav.js"></script>
 </body>
 </html>
