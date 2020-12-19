@@ -12,7 +12,7 @@ function getAllMainCategories()
     $db_result = mysqli_query($db_connection, "SELECT * FROM categories WHERE `parent_id`= 0");
     $categories = [];
 
-    while ($row = $db_result->fetch_assoc())
+    while ($row = mysqli_fetch_assoc($db_result))
     {
         $categories[] = $row;
     }
