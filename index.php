@@ -1,5 +1,6 @@
 <?php
 
-print "Hallo Welt"
+// Decide, what we have to do
 
-?>
+include 'templates/layout.php';
+
