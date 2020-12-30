@@ -16,13 +16,15 @@ if(isset($_REQUEST['action']) && in_array($_REQUEST['action'], $available_action
     die('invalid action');
 }
 
+
+
+
 // VALIDATIONS
 $rules = [
-    'nav_title' => ['required'],
-    'title' => ['required'],
-    'priority' => ['number']
+    'nav_title' =>  ['required', 'max20chars'],
+    'title' =>      ['required'],
+    'priority' =>   ['number', 'max20chars', 'required']
 ];
-
 
 switch($action){
     case 'list':
@@ -104,8 +106,6 @@ function createNavigationItem($rules){
 function showUpdateForm($id, $errors = [], $values = []){
     include('models/navigation.php');
     $item = getNavigationItemById($id);
-//    var_dump($errors);
-//    die();
     return [
         'page' => 'admin/forms/navigation.php',
         'action' => 'index.php?p=admin&module=navigation&action=update',

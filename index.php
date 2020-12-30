@@ -1,4 +1,6 @@
 <?php
+include('templates/header.php');
+
 // Base system
 include('config.php');
 include('database.php');
@@ -8,6 +10,7 @@ include('helpers/validations.php');
 include('database/categories.php');
 
 session_start();
+
 
 $css_head = [
     'assets/css/bulma.css'
@@ -25,7 +28,6 @@ if(isset($_GET['p']) && $_GET['p'] != ''){
         include('controllers/admin.php');
     }
 }
-
 
 
 // Seite ist bereit

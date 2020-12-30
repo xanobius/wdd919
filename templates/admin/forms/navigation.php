@@ -1,4 +1,5 @@
 <form action="<?php print $pageElement['action'] ?>" method="POST">
+
     <?php if(array_key_exists('id', $pageElement['values'])) { ?>
     <input type="hidden" name="id" value="<?php print $pageElement['values']['id'] ?>">
     <?php } ?>
@@ -11,8 +12,10 @@
                         name="nav_title"
                         class="input <?php if(array_key_exists('nav_title', $pageElement['errors'])){ ?> is-danger <?php } ?>"
                         type="text"
+                        maxlength="20"
                         placeholder="Titel im Menü"
                         value="<?php print $pageElement['values']['nav_title'] ?? '' ?>">
+
                 <?php if(array_key_exists('nav_title', $pageElement['errors'])){ ?>
                     <span class="icon is-small is-right">
                         <i class="fas fa-exclamation-triangle"></i>

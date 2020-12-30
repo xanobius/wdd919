@@ -2,7 +2,8 @@
 
 $errorFeedback = [
     'required' => 'Dieses Feld muss ausgefüllt sein',
-    'number' => 'Dieses Feld muss eine Ganzzahl sein'
+    'number' => 'Dieses Feld muss eine Ganzzahl sein',
+    'max20chars' => 'Dieses Feld darf max. 20 Zeichen haben'
 ];
 
 function validateFields($fieldRules){
@@ -12,14 +13,22 @@ function validateFields($fieldRules){
         $fieldErrors = [];
         $value = $_REQUEST[$field];
         foreach($rules as $rule){
+
+
             if($rule == 'required'){
-                if(! isset($value) || trim($value) == ''){
+                if(! isset($value) || trim($value) == '' ){
                     $fieldErrors[] = $errorFeedback[$rule]; // 'required'
                 }
             }
 
             if($rule == 'number'){
                 if($value != '' && ! preg_match('/^(\d+)$/', $value)){
+                    $fieldErrors[] = $errorFeedback[$rule]; // 'number'
+                }
+            }
+
+            if($rule == 'max20chars'){
+                if($value != '' && strlen($value) > 20){
                     $fieldErrors[] = $errorFeedback[$rule]; // 'required'
                 }
             }
