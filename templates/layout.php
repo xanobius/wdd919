@@ -24,13 +24,18 @@
     <div class="container">
         <?php
 //            include('templates/character.php');
-            if(isset($page)){
-                include($page);
+            if(isset($pageElement) && $pageElement != null){
+                include($pageElement['page']);
             }else{
-                if($content){
-                    print $content;
+                // For historic reasons
+                if(isset($page)){
+                    include($page);
                 }else{
-                    include('templates/default.php');
+                    if($content){
+                        print $content;
+                    }else{
+                        include('templates/default.php');
+                    }
                 }
             }
         ?>

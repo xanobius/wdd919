@@ -2,6 +2,7 @@
 // Base system
 include('config.php');
 include('database.php');
+include('helpers/validations.php');
 
 // Database functions
 include('database/categories.php');
@@ -12,13 +13,19 @@ $css_head = [
     'assets/css/bulma.css'
 ];
 
+$pageElement = null;
+
 // Was soll gemacht werden
 // 1. Seite aussuchen. In Parameter p gespeicher
 if(isset($_GET['p']) && $_GET['p'] != ''){
     if($_GET['p'] == 'login'){
         include('controllers/login.php');
     }
+    if($_GET['p'] == 'admin'){
+        include('controllers/admin.php');
+    }
 }
+
 
 
 // Seite ist bereit
