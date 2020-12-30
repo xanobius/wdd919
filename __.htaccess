@@ -1,3 +1,0 @@
-Options +FollowSymLinks
-# RewriteEngine On
-RewriteRule ^index/([a-z]*)$ ./index.php?p=$1

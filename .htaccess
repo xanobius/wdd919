@@ -1,0 +1,9 @@
+RewriteEngine on
+Options +FollowSymLinks
+RewriteBase /
+#RewriteRule "admin/navigation" "index.php" [R]
+#RewriteRule ^admin/navigation$ /index.php?p=admin&module=navigation&action=list
+#RewriteRule ^admin/navigation/create$ /index.php?p=admin&module=navigation&action=create
+
+
+# RewriteRule ^index/([a-z]*)$ ./index.php?p=$1
