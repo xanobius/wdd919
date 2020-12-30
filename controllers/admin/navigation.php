@@ -71,9 +71,14 @@ function createNavigationItem($rules){
                 'starred' => $_REQUEST['starred']
             ]);
     }else{
-        die('save this one!');
+        include('models/navigation.php');
+        $res = saveNavigationEntry($_REQUEST);
+        if($res == false){
+            die('Speichern fehlgeschlagen');
+        }else{
+            die('Erfolgreich gespeichert mit ID : ' . $res);
+        }
     }
-    die();
 }
 
 function showUpdateForm($id){
