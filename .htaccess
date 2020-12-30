@@ -4,6 +4,9 @@ RewriteBase /
 #RewriteRule "admin/navigation" "index.php" [R]
 #RewriteRule ^admin/navigation$ /index.php?p=admin&module=navigation&action=list
 #RewriteRule ^admin/navigation/create$ /index.php?p=admin&module=navigation&action=create
+RewriteRule ^admin/navigation/edit/(\d+)$ /index.php?p=admin&module=navigation&action=edit&id=$1
+
+RewriteRule ^admin/([a-z]+)/([a-z]+)$ /index.php?p=admin&module=$1&action=$2
 
 
 # RewriteRule ^index/([a-z]*)$ ./index.php?p=$1
