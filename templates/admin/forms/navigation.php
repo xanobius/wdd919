@@ -1,4 +1,7 @@
 <form action="<?php print $pageElement['action'] ?>" method="POST">
+    <?php if(array_key_exists('id', $pageElement['values'])) { ?>
+    <input type="hidden" name="id" value="<?php print $pageElement['values']['id'] ?>">
+    <?php } ?>
 
     <div class="columns is-multiline">
         <div class="field column ">
@@ -86,22 +89,6 @@
             </label>
         </div>
     </div>
-
-    <!--
-    <div class="field">
-        <label class="label">Email</label>
-        <div class="control has-icons-left has-icons-right">
-            <input class="input is-danger" type="email" placeholder="Email input" value="hello@">
-            <span class="icon is-small is-left">
-          <i class="fas fa-envelope"></i>
-        </span>
-            <span class="icon is-small is-right">
-          <i class="fas fa-exclamation-triangle"></i>
-        </span>
-        </div>
-        <p class="help is-danger"><?php print $errors[0]; ?></p>
-    </div>
-    -->
 
     <div class="field is-grouped">
         <div class="control">
